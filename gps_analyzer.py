@@ -11,27 +11,16 @@ gps_data = gps_parse("activity_9401851735.gpx")
 interval = 100 # in meters
 
 # variables for total data
-tot_dist = 0.0
-tot_ele = 0.0
-tot_time = 0
+tot_dist = tot_ele = tot_time  = 0.0
 
-# variables for maximum and minimums
-max_v = -float('inf')
-max_ele = -float('inf')
-min_ele = float('inf')
+# variables to store minima and maxima
 
-max_avg_v = -float('inf')
-max_avg_slope = -float('inf')
-min_avg_slope = float('inf')
+max_v = max_ele = max_avg_v = max_avg_slope = -float('inf')
+min_ele = min_avg_slope = float('inf')
 
 # list for plotting
-list_dist = []
-list_ele = []
-list_v = []
-list_time = []
+list_dist, list_ele, list_v, list_time, list_avg_v, list_avg_slope = [], [], [], [], [], []
 
-list_avg_v = []
-list_avg_slope = []
 
 # loop over the gps points
 for i in range(len(gps_data)):
@@ -57,7 +46,7 @@ for i in range(len(gps_data)):
         ini_abs_time = old_abs_time
         
     else:
-        dx = 1E3*haversine(crd.lon, crd.lat  , old_lon, old_lat) # space interval between gps points in meters
+        dx = 1E3*haversine(crd.lon, crd.lat , old_lon, old_lat) # space interval between gps points in meters
         tot_dist = tot_dist + dx # total distance in meters
         
         time = crd.time.split(":")
