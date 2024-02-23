@@ -1,5 +1,5 @@
 # GPS track analyzer
-This codes analyses gps tracks in .gpx format. Computes relevant information and plots them
+This codes analyses gps tracks in .gpx format. It computes relevant information and plots them
 
 The code can be used by simply running
 
