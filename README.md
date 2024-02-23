@@ -1,2 +1,2 @@
-# gps_track_analyser
-Analyse tracks in .gpx format. Compute and plot relevant information
+# GPS track analyser
+This codes analyses gps tracks in .gpx format. Computes relevant information and plots them
